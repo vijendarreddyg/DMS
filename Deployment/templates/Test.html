@@ -1,0 +1,63 @@
+<html>
+<style>
+.tablink {
+  background-color: #555;
+  color: white;
+  font-family:arial;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33%;
+}
+
+.tablink:hover {
+  background-color: #777;
+  font-family:arial;
+}
+body {
+  color: green;
+  font-family:arial;
+  background-color:black;
+}
+div{
+text-align: center;
+}
+</style>
+<head>
+
+    <title>Test DMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/design.css') }}">
+
+
+</head>
+
+<body style="background-color:white;">
+
+
+<div class="login">
+	<br><br>
+    <h2 style="font-family:verdana;color:black;">Please Enter below details of new defect</h2><br>
+    <form action = "http://localhost:5000/View" method = "POST">
+		<label for="username">Description </label>
+        <input type="text" name="Desc" placeholder="Description" required='required' onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';"/><br><br>
+		<label for="username">Application</label>
+		<input type="text" name="App" placeholder="Application" /><br><br>
+		<label for="username">Priority</label>
+		<input type="text" name="Prio" placeholder="Priority" /><br><br>
+        <button type ='Submit' class = "btn btn-primary btn-block btn-large">Predict Status</button>
+    </form>
+	
+	<h2 style="font-family:verdana;color:black;">Prediction and probability:</h2> 
+	<>
+	{{pred, pred_probability | safe}}
+</div>
+
+</body>
+</html>
+
+
+
+
